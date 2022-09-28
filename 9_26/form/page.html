@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0 auto;
+				padding: 0;
+				
+			}
+			.box{
+				width: 650px;
+				height: 600px;
+				border:1px solid #ccc;
+				text-align: center;
+			}
+			.box dl dt,.box dl dd{
+				
+				text-align: left;
+			}
+			.box dl dd{
+				width:140px;
+				margin-left: auto;
+				position: relative;
+				left: 17px;
+				
+			}
+			.box dl dt{
+				float: left;
+				position: relative;
+				left: 25%;
+				width: 100px;
+			}
+			.box dl{
+				overflow: hidden; /* 清除浮动 */
+				margin:15px 0;
+			}
+			#other{
+				width: 300px;
+				position: relative;
+				left: 15%;
+			}
+			.small{
+				font-size: small;
+				color: darkgray;
+			}
+			#but{
+				height: 27px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id=""  class="box">
+			<h3 style="color:gray;">会员登陆</h3>
+			<form action="" method="post">
+				<dl>
+					<dt>登录账号</dt>
+					<dd><input  type="text" name="account" placeholder="邮箱/ID/手机号" disabled/></dd>
+				</dl>
+				<dl>
+					<dt><label for="pwd">密码</label></dt>
+					<dd><input id="pwd"  type="password" name="password" placeholder="密码"/></dd>
+				</dl>
+				<dl>
+					<dt> </dt>
+					<dd>
+						<input name="Checkbox" type="checkbox" checked>
+						<label class="small">两周内自动登录</label>
+					 </dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd><button id="but"><img src="images/login.png"></button><a href="">忘记密码</a></dd>
+				</dl>
+				<dl>
+					<dt>其他账号登录</dt>
+						<dd id="other">
+						<button><img src="images/ico1.png"></button><label class="small">QQ账号</label>
+						<button><img src="images/ico2.png"></button><label class="small">微博账号</label>
+						<button><img src="images/ico3.png"></button><label class="small">百度账号</label>
+						</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd id="other"><a href="">还不是会员？立即注册</a></dd>
+				</dl>
+			</form>
+		</div>
+	</body>
+</html>

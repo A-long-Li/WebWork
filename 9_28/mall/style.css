@@ -43,12 +43,13 @@ li{
 	color: #96C8F8;
 }
 .view{
+	width: 1900px;
 	height: 620px;
-	background-color:gray;
-	margin-top: 100px;
+	background-image: url(images/banner.jpg) ;
+	margin: 100px auto; 
 }
 .Service{
-	margin-top: 64px;
+	margin-top: 64px;	
 	height: 700px;
 	/* background-color: #333333; */
 }
@@ -79,7 +80,7 @@ li{
 .se_body li{
 	width: 318px;
 	height: 510px;
- 	background-color: #fff;
+ 	background-color: #fff; 
 	border: 1px solid #e7e8e9;
 	float: left;
 	margin: 20px 0;
@@ -114,6 +115,11 @@ li{
 	font-size: 14px;
 	border: 1px solid #ff9412;
 	margin: 35px auto 0;
+	border-radius: 6px;
+}
+.se_body a:hover{
+	background-color: #ff9412;
+	color:#fff;
 }
 .example{
 	text-align: center;
@@ -196,9 +202,9 @@ a:hover .mask{
 .footer ul{
 	width: 1100px;
 	margin:100px auto;
-
 }
 .footer ul li{
+	filter: grayscale();
 	background: url(images/tb.png) no-repeat center;
 	width: 200px;
 	height: 150px;
@@ -206,6 +212,9 @@ a:hover .mask{
 	float: left;
 	margin-left: -1px;
 	border-top: none;
+}
+.foot li:hover{
+	filter: grayscale(0%);
 }
 .footer ul li:nth-child(11){
 	border-bottom: none;
@@ -227,45 +236,9 @@ a:hover .mask{
 }
 .footer ul li:nth-child(5n+1){ /* 1,6,11    5n+1*/
 	border-left: none;
-}
-.foot_m{
+} 
+.foot{
 	margin: 0 auto;
 	width: 1000px;
 	height: 450px;
 }
-
-
-/* 尾部 */
-.foot{
-	margin: 50px auto;
-	width: 1190px;
-	height: 150px;
-	background-color: #202425;
-	color: white;
-	text-align: center;
-}
-
-.foot_hd{
-	margin: 0 auto;
-	padding-top: 20px;
-	text-align: center;
-
-}
-.foot_hd2 p{
-	width: 1186px;
-	margin-top: 40px;
-	color: #696B6A;
-}
-.foot_hd a{
-	margin-top: 20px;
-	color: #FAFAFA;
-	border-right: 1px solid white;
-	margin-right: 10px;
-	padding-right: 10px;
-	text-decoration: none;
-}
-.foot_hd a:hover{
-	color: #2288f6;
-	text-decoration: underline;
-}
-

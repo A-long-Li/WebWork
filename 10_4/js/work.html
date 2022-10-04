@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let str = "dkaWDAjiDAWhwaDWAuiwIDWJAHJWIahAWFADwfaa";
+    let new_str = "";
+    console.log(str);
+    for (let i = 0, cnt = 0; i < str.length; i++) {
+
+        if (str.charAt(i).toLowerCase() === str.charAt(i)) new_str += str[i].toUpperCase();
+        else new_str += str[i].toLowerCase();
+        cnt++;
+        if (cnt === 4 && i !== str.length - 1) {
+            cnt = 0;
+            new_str += '_';
+        }
+
+    }
+    console.log(new_str)
+</script>

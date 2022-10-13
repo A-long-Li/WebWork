@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			.stars li{
+				width: 40px;
+				height: 40px;
+				list-style: none;
+				float: left;
+				background-image:url(images/star.png);
+				background-position: 0 -40px;
+			}
+			#tx_div{
+				position: relative;
+				top:10%;
+				left: 10%;
+			}
+			#st_div{
+				width: 300px;
+				height: 100px;
+				position: relative;
+				top:13%;
+				left: 15%;
+			}
+			.div_body{
+				width: 400px;
+				height: 800px;
+				border: 2px solid black;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -300px;
+				margin-left: -200px;
+			}
+			#tx{
+				height: 100px;
+				width: 100px;
+				border-radius: 60%;
+				float: left;
+			}
+			.div_txt1{
+				position: relative;
+				top:5%;
+				left: 42%;
+				font-size: 16px;
+				color: gray;
+			}
+			#div_top{
+				border-top: 1px solid #EDEDED;
+				margin: 0 50px;
+			}
+			#div_yx{
+				height: 300px;
+				width: 100%;
+				margin-top: 100px;
+			}
+			#yx{
+				width: 100%;
+				text-align: center;
+				height: 30px;
+				margin: -12px auto 0;
+				color: gray;
+				font-weight: 400;
+				font-size: 14px;
+			}
+			.li_yx{
+				float: left;
+				border: 1px solid gray;
+				width: 30%;
+				margin-left: 50px;
+				margin-top: 30px;
+				font-size: 20px;
+				list-style: none;
+				text-align: center;
+			}
+			#div_submit{
+				text-align: center;
+				width: 100%;
+			}
+			#ipt{
+				width: 300px;
+				height: 30px;
+			}
+			#btnSub{
+				text-align: center;
+				width: 300px;
+				height: 40px;
+				background-color: #0A083A;
+				margin-top: 30px;
+				color: white;
+				font-size: 20px;
+			}
+		</style>
+		<script>
+			onload = function(){
+				let lis = document.getElementsByTagName("li");
+				for(let i = 0;i<lis.length;i++){
+					lis[i].index = i;
+					lis[i].onmouseover = function(){
+						console.log(this.index);
+						for(let k=0;k<lis.length;k++){
+							lis[k].style.backgroundPosition = "0 -40px";
+						}
+						for(let j = 0;j<=this.index;j++){
+							lis[j].style.backgroundPosition = "0 0";
+						}
+					};
+					lis[i].onmouseout = function(){
+						for(let k=0;k<lis.length;k++){
+							lis[k].style.backgroundPosition = "0 -40px";
+						}
+						let current = document.getElementById("current");
+						if(current){
+							for(let n = 0;n<=current.index;n++){
+								lis[n].style.backgroundPosition = "0 0";
+							}
+						}
+					};
+					lis[i].onclick = function(){
+						for(let m=0;m<lis.length;m++){
+							lis[m].id = "";
+						}
+						this.id = "current";
+					};
+				}
+			};
+			function btnClick(){
+				let word=document.getElementById("ipt").value;
+				console.log(word);
+				let li=document.createElement("li");
+				li.innerHTML=word;
+				li.className="li_yx";
+				let ul=document.getElementById("uul");
+				ul.appendChild(li);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="div_body">
+			<div id="tx_div">
+				<img src="./images/wanwan.jpg" id="tx" alt="tx">
+			</div>
+			<div id="st_div">
+				<ul class="stars" id="stars">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="div_txt1">点这里,为他评分</div>
+			<div id="div_yx">
+				<div id="div_top"><h3 id="yx">对他的印象</h3></div>
+				<ul id="uul">
+				</ul>
+			</div>
+			<div id="div_submit">
+				<input type="text" id="ipt" value="" />
+				<button type="button" id="btnSub" onclick="btnClick()">提交</button>
+			</div>
+		</div>
+
+	</body>
+</html>

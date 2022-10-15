@@ -66,7 +66,7 @@
 				font-weight: 400;
 				font-size: 14px;
 			}
-			.li_yx{
+			.ty_b{
 				float: left;
 				border: 1px solid gray;
 				width: 30%;
@@ -94,49 +94,7 @@
 				font-size: 20px;
 			}
 		</style>
-		<script>
-			onload = function(){
-				let lis = document.getElementsByTagName("li");
-				for(let i = 0;i<lis.length;i++){
-					lis[i].index = i;
-					lis[i].onmouseover = function(){
-						console.log(this.index);
-						for(let k=0;k<lis.length;k++){
-							lis[k].style.backgroundPosition = "0 -40px";
-						}
-						for(let j = 0;j<=this.index;j++){
-							lis[j].style.backgroundPosition = "0 0";
-						}
-					};
-					lis[i].onmouseout = function(){
-						for(let k=0;k<lis.length;k++){
-							lis[k].style.backgroundPosition = "0 -40px";
-						}
-						let current = document.getElementById("current");
-						if(current){
-							for(let n = 0;n<=current.index;n++){
-								lis[n].style.backgroundPosition = "0 0";
-							}
-						}
-					};
-					lis[i].onclick = function(){
-						for(let m=0;m<lis.length;m++){
-							lis[m].id = "";
-						}
-						this.id = "current";
-					};
-				}
-			};
-			function btnClick(){
-				let word=document.getElementById("ipt").value;
-				console.log(word);
-				let li=document.createElement("li");
-				li.innerHTML=word;
-				li.className="li_yx";
-				let ul=document.getElementById("uul");
-				ul.appendChild(li);
-			}
-		</script>
+
 	</head>
 	<body>
 		<div class="div_body">
@@ -166,3 +124,47 @@
 
 	</body>
 </html>
+
+<script>
+	onload = function(){
+		let lis = document.getElementsByTagName("li");
+		for(let i = 0;i<lis.length;i++){
+			lis[i].index = i;
+			lis[i].onmouseover = function(){
+				console.log(this.index);
+				for(let k=0;k<lis.length;k++){
+					lis[k].style.backgroundPosition = "0 -40px";
+				}
+				for(let j = 0;j<=this.index;j++){
+					lis[j].style.backgroundPosition = "0 0";
+				}
+			};
+			lis[i].onmouseout = function(){
+				for(let k=0;k<lis.length;k++){
+					lis[k].style.backgroundPosition = "0 -40px";
+				}
+				let current = document.getElementById("current");
+				if(current){
+					for(let n = 0;n<=current.index;n++){
+						lis[n].style.backgroundPosition = "0 0";
+					}
+				}
+			};
+			lis[i].onclick = function(){
+				for(let m=0;m<lis.length;m++){
+					lis[m].id = "";
+				}
+				this.id = "current";
+			};
+		}
+	};
+	function btnClick(){
+		let word=document.getElementById("ipt").value;
+		console.log(word);
+		let li=document.createElement("li");
+		li.innerHTML=word;
+		li.className="ty_b";
+		let ul=document.getElementById("uul");
+		ul.appendChild(li);
+	}
+</script>
